@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="js.js" defer></script>
+  </head>
+  <body>
+    <header class="title">
+      <i class="fa-solid fa-bars menu"> 📬 Mail App</i>
+      <div class="compose">
+        <i class="fa-solid fa-pen">Compose</i>
+      </div>
+    </header>
+    <div class="container">
+      <app-sidebar-button text="Inbox" selected="true">
+        <span slot="icon">📥</span>
+      </app-sidebar-button>
+      <app-sidebar-button text="Starred">
+        <span slot="icon">⭐️</span>
+      </app-sidebar-button>
+      <app-sidebar-button text="Snoozed">
+        <span slot="icon">🕙</span>
+      </app-sidebar-button>
+      <app-sidebar-button text="Sent">
+        <span slot="icon">➡️</span>
+      </app-sidebar-button>
+      <app-sidebar-button text="Draft" unreadCount="1">
+        <span slot="icon">🗒️</span>
+      </app-sidebar-button>
+    </div>
+
+    <template id="sidebar-button">
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        .sidebar-button {
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          border-radius: 5px;
+          cursor: pointer;
+          background-color: #ffffff;
+        }
+        .sidebar-button:hover {
+          background-color: #cccbcb;
+        }
+        .selected {
+          background-color: #b3ebff;
+        }
+        .icon {
+          margin: 10px;
+          color: black;
+        }
+        .badge {
+          color: black;
+          margin-left: auto;
+          padding: 5px;
+          font-weight: bold;
+        }
+      </style>
+      <div class="sidebar-button">
+        <span class="icon"><slot name="icon"></slot></span>
+        <span class="text"></span>
+        <span class="badge"></span>
+      </div>
+    </template>
+  </body>
+</html>

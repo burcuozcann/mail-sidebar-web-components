@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    height: 300px;
+    width: 300px;
+}
+.compose{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b3ebff;
+    width: 300px;
+    height: 80px;
+    border-radius: 30px;
+    margin: 10px;
+  
+  }
+  .menu{
+  margin: 10px;
+  }
